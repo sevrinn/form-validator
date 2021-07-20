@@ -3,7 +3,7 @@ import React, {useReducer} from 'react';
 //defines initalState
 const initialState = 0;
 //define reducer function
-// reducer takes current state, performs action, and returns new state
+//reducer takes current STATE, performs ACTION, and returns new state
 //reducer is passed to the useReducer function in our funcitonal component
 const reducer = (state, action) => {
   switch(action){
@@ -19,7 +19,8 @@ const reducer = (state, action) => {
 }
 
 function CounterOne() {
-  useReducer(reducer, initialState);
+  //useReducer returns a pair of values we can get ahold of using the array destructuring syntax
+  const[count, dispatch]=useReducer(reducer, initialState);
 
   return (
     <div className = "CounterOne">
