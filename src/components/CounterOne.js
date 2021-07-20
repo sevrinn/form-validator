@@ -24,12 +24,15 @@ function CounterOne() {
   //the dispatch method allows us to execute code corresponding to a particular action defined in our reducer function. 
   const[count, dispatch]=useReducer(reducer, initialState);
 
+
+  //each button gets an onClick event handler that is an arrow function where we dispatch the action
   return (
     <div className = "CounterOne">
+    <h2>Simple Counter</h2>
       <div>Count: {count}</div>
-      <button>Increment</button>
-      <button>Decrement</button>
-      <button>Reset</button>
+      <button onClick={()=>dispatch('increment')}>Increment</button>
+      <button onClick={()=>dispatch('decrement')}>Decrement</button>
+      <button onClick={()=>dispatch('reset')}>Reset</button>
     </div>
   );
 }
