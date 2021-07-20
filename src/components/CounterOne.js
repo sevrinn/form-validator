@@ -19,11 +19,14 @@ const reducer = (state, action) => {
 }
 
 function CounterOne() {
-  //useReducer returns a pair of values we can get ahold of using the array destructuring syntax
+  //useReducer returns a pair of values we can get ahold of using the array destructuring syntax, [currentState, dispatch]
+  //the currentState we've called count here
+  //the dispatch method allows us to execute code corresponding to a particular action defined in our reducer function. 
   const[count, dispatch]=useReducer(reducer, initialState);
 
   return (
     <div className = "CounterOne">
+      <div>Count: {count}</div>
       <button>Increment</button>
       <button>Decrement</button>
       <button>Reset</button>
